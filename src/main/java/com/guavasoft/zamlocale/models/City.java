@@ -1,7 +1,7 @@
 package com.guavasoft.zamlocale.models;
-import com.guavasoft.zamlocale.contracts.Entity;
+import com.guavasoft.zamlocale.contracts.AbstractEntity;
 
-public class City extends Entity {
+public class City extends AbstractEntity {
     // class attributes
     private  String name;
     private  long provinceId;
