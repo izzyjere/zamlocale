@@ -1,6 +1,6 @@
 package com.guavasoft.zamlocale.services.imp;
 
-import com.guavasoft.zamlocale.data.IRepository;
+import com.guavasoft.zamlocale.data.ProvinceRepository;
 import com.guavasoft.zamlocale.models.Province;
 import com.guavasoft.zamlocale.services.IProvinceService;
 import org.springframework.stereotype.Service;
@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class ProvinceService implements IProvinceService {
-    private IRepository<Province> repository;
+    private ProvinceRepository repository;
 
-    public ProvinceService(IRepository<Province> repository) {
+    public ProvinceService(ProvinceRepository repository) {
         this.repository = repository;
     }
 
