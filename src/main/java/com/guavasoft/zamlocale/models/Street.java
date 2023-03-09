@@ -7,10 +7,7 @@ import jakarta.persistence.*;
 public class Street extends AbstractEntity  {
     @Column(name = "Name", nullable = false)
     private String name;
-    @Column(name = "CityId")
-    private  long cityId;
     @ManyToOne
-    @JoinColumn(name = "CityId")
     private City city;
 
     public String getName() {
@@ -21,13 +18,6 @@ public class Street extends AbstractEntity  {
         this.name = name;
     }
 
-    public long getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(long cityId) {
-        this.cityId = cityId;
-    }
 
     public City getCity() {
         return city;

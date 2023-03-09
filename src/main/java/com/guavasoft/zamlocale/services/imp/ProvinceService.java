@@ -16,7 +16,10 @@ public class ProvinceService implements IProvinceService {
 
     @Override
     public Province getById(long id) {
-        return null;
+        var record = repository.findById(id);
+        if(record.isPresent())
+            return record.get();
+        return  null;
     }
 
     @Override
@@ -26,16 +29,25 @@ public class ProvinceService implements IProvinceService {
 
     @Override
     public Province create(Province entity) {
-        return  repository.save(entity);
+        return repository.save(entity);
     }
 
     @Override
     public boolean deleteById(long id) {
-        return false;
+        if(getById(id)!=null){
+            repository.deleteById(id);
+            return true;
+        }
+        return  false;
     }
 
     @Override
     public Province update(Province entity, long id){
-        return  null;
+        var existingRecord = getById(id);
+        if(existingRecord!=null){
+            existingRecord.setName(entity.getName());
+            return  repository.save(existingRecord);
+        }
+        return null;
     }
 }

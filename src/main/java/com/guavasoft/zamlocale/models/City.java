@@ -9,8 +9,6 @@ public class City extends AbstractEntity {
     // class attributes
     @Column(name="Name", nullable=false)
     private  String name;
-    @Column(name="ProvinceId")
-    private  long provinceId;
 
     public List<Street> getStreets() {
         return streets;
@@ -32,7 +30,6 @@ public class City extends AbstractEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "ProvinceId")
     private  Province province;
     // getters and setters
     public String getName() {
@@ -40,12 +37,6 @@ public class City extends AbstractEntity {
     }
     public void setName(String name) {
         this.name = name;
-    }
-    public long getProvinceId() {
-        return provinceId;
-    }
-    public void setProvinceId(long provinceId) {
-        this.provinceId = provinceId;
     }
 
 }
