@@ -6,8 +6,9 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "Province")
 public class Province extends AbstractEntity {
-    @Column(name = "Name", nullable = false)
+
     private  String name;
     @OneToMany
     @JoinTable(name = "City")

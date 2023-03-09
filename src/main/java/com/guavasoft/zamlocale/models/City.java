@@ -5,19 +5,16 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "City")
 public class City extends AbstractEntity {
     // class attributes
-    @Column(name="Name", nullable=false)
     private  String name;
-
     public List<Street> getStreets() {
         return streets;
     }
-
     public void setStreets(List<Street> streets) {
         this.streets = streets;
     }
-
     @OneToMany
     @JoinTable(name = "Street")
     private List<Street> streets;
@@ -30,6 +27,7 @@ public class City extends AbstractEntity {
     }
 
     @ManyToOne
+    @JoinColumn(name = "province_id")
     private  Province province;
     // getters and setters
     public String getName() {
