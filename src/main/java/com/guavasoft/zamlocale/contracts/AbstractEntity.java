@@ -1,8 +1,6 @@
 package com.guavasoft.zamlocale.contracts;
 
-import org.springframework.cglib.core.GeneratorStrategy;
-
-public abstract class Entity {
+public abstract class AbstractEntity {
     public long getId() {
         return id;
     }
