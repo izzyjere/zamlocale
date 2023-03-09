@@ -20,7 +20,7 @@ public class CityService implements ICityService {
 
     @Override
     public City create(City entity) {
-        return false;
+        return null;
     }
 
     @Override
@@ -30,6 +30,6 @@ public class CityService implements ICityService {
 
     @Override
     public City update(City entity, long id) {
-        return false;
+        return null;
     }
 }
