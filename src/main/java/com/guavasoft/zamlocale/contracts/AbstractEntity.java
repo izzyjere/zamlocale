@@ -1,9 +1,9 @@
 package com.guavasoft.zamlocale.contracts;
+import jakarta.persistence.*;
+import jakarta.persistence.MappedSuperclass;
 
-import jakarta.annotation.Generated;
-import org.springframework.cglib.core.GeneratorStrategy;
-import org.springframework.data.annotation.Id;
 
+@MappedSuperclass
 public abstract class AbstractEntity {
     public long getId() {
         return id;
@@ -14,5 +14,6 @@ public abstract class AbstractEntity {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  long id;
 }
