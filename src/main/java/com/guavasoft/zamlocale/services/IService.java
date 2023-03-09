@@ -5,7 +5,7 @@ import java.util.List;
 public interface IService<TModel>  {
     TModel getById(long id);
     List<TModel> getAll();
-    boolean create(TModel entity);
+    TModel create(TModel entity);
     boolean deleteById(long id);
-    boolean update(TModel entity);
+    TModel update(TModel entity, long id);
 }
